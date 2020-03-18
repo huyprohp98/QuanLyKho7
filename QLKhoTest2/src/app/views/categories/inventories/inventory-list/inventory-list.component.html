@@ -1,0 +1,76 @@
+<div nz-row style="margin-bottom: 5px;">
+    <div nz-row>
+        <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12">
+            <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+                <input type="text" nz-input placeholder="Tìm kiếm..." #keyword (keyup.enter)="search(keyword.value)" />
+            </nz-input-group>
+            <ng-template #suffixIconButton>
+                <button nz-button nzType="primary" nzSearch (click)="search(keyword.value)">
+                    <i nz-icon nzType="search"></i>
+                </button>
+            </ng-template>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12" nzXl="12" class="text-right">
+            <button nz-button nzType="primary" (click)="addNew()">
+                <i nz-icon nzType="plus" nzTheme="outline"></i> Thêm mới
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<nz-table #basicTable nzBordered nzShowSizeChanger [nzFrontPagination]="false" [nzData]="listOfDataInventory"
+    [nzTotal]="pagination.totalItems" [(nzPageIndex)]="pagination.currentPage" [(nzPageSize)]="pagination.itemsPerPage"
+    [nzNoResult]="'Không có dữ liệu.'" (nzPageIndexChange)="loadData()" nzShowQuickJumper [nzShowTotal]="rangeTemplate"
+    nzSize="middle">
+    <ng-template #rangeTemplate let-range="range" let-total>
+        {{range[0]}}-{{range[1]}} của {{total}} bản ghi
+    </ng-template>
+    <thead (nzSortChange)="sort($event)" nzSingleSort>
+        <tr>
+            <th>Id</th>
+            <th nzShowSort nzSortKey="name" nzCustomFilter>Vật tư
+                <i nz-th-extra class="ant-table-filter-icon" nz-icon nz-dropdown #dropdown1="nzDropdown" nzType="search"
+                    [nzDropdownMenu]="menu1" [class.ant-table-filter-open]="dropdown1.nzVisible" nzTrigger="click"
+                    nzPlacement="bottomRight" [nzClickHide]="false" nzTableFilter></i>
+                <nz-dropdown-menu #menu1="nzDropdownMenu">
+                    <div class="search-box">
+                        <input type="text" nz-input placeholder="Tìm tên vật tư" [(ngModel)]="pagingParams.searchValue"
+                            (keyup.enter)="searchColumn('name')" />
+                        <button [disabled]="!pagingParams.searchValue" nz-button nzSize="small" nzType="primary"
+                            (click)="searchColumn('name')" class="search-button">
+                            Tìm
+                        </button>
+                        <button [disabled]="!pagingParams.searchValue" nz-button nzSize="small"
+                            (click)="reset()">Reset</button>
+                    </div>
+                </nz-dropdown-menu>
+            </th>
+            <th nzShowSort nzSortKey="price" nzCustomFilter>Giá</th>
+            <th nzShowSort nzSortKey="amount" nzCustomFilter>Số lượng</th>
+            <th nzShowSort nzSortKey="unitName" nzCustomFilter>Đơn vị</th>
+            <th nzShowSort nzSortKey="stockName" nzCustomFilter>Kho</th>
+            <th nzWidth="15%">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.id }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.price }}</td>
+            <td>{{ data.amount }}</td>
+            <td>{{ data.unitName }}</td>
+            <td>{{ data.stockName }}</td>
+            <td class="decrease-row">
+                <nz-button-group>
+                    <button nz-button nzType="default" nz-tooltip nzTitle="Sửa" (click)="update(data)">
+                        <i nz-icon nzType="edit" theme="outline"></i>
+                    </button>
+                    <button nz-button nzType="danger" nz-tooltip nzTitle="Xóa" (click)="delete(data.id)">
+                        <i nz-icon nzType="delete" theme="outline"></i>
+                    </button>
+                </nz-button-group>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

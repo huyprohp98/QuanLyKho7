@@ -1,0 +1,199 @@
+<!-- <nz-layout>
+  <nz-sider>
+    <ul nz-menu nzMode="inline">
+      <li nz-submenu nzTitle="Danh mục" nzIcon="mail" nzOpen>
+        <ul>
+          <ul>
+            <li nz-menu-item [nzMatchRouter]="true">
+              <a [routerLink]="['/danh-muc/khach-hang/danh-sach']">
+                <i nz-icon nzType="gold" nzTheme="outline"></i><span>Khách Hàng</span>
+              </a>
+            </li>
+            <li nz-menu-item [nzMatchRouter]="true">
+              <a [routerLink]="['/danh-muc/don-vi-tinh/danh-sach']">
+                <i nz-icon nzType="gold" nzTheme="outline"></i><span>Đơn vị tính</span>
+              </a>
+            </li>
+            <li nz-menu-item [nzMatchRouter]="true">
+            <a [routerLink]="['/danh-muc/vat-tu/danh-sach']">
+              <i nz-icon nzType="gold" nzTheme="outline"></i><span>Vật tư</span>
+            </a>
+          </li>
+          <li nz-menu-item [nzMatchRouter]="true">
+            <a [routerLink]="['/danh-muc/kho/danh-sach']">
+              <i nz-icon nzType="gold" nzTheme="outline"></i><span>Kho</span>
+            </a>
+          </li>
+          </ul>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>Header</nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>Footer</nz-footer>
+  </nz-layout>
+</nz-layout> -->
+
+<nz-layout>
+  <nz-header style="background:#1890ff ;margin-left: 15px;">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+      <li style="background: #096dd9;" nz-menu-item nzSelected>Đăng Nhập</li>
+      <li style="background: #096dd9;" nz-menu-item>Đăng Ký</li>
+      <li style="background: #096dd9;" nz-menu-item>Kiểm Tra Đơn Hàng</li>
+    </ul>
+
+
+  </nz-header>
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light">
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li nz-menu-item>
+          <i nz-icon nzType="home" nzTheme="outline"></i><span>Quản Lý Kho</span>
+        </li>
+        <!-- <li nz-submenu nzOpen nzTitle="Quản Lý Kho" nzIcon="home"     >  
+           <ul>
+            <li nz-menu-group nzTitle="Item 1">
+              <ul>
+                <li nz-menu-item nzSelected>Option 1</li>
+                <li nz-menu-item>Option 2</li>
+              </ul>
+            </li>
+            <li nz-menu-group nzTitle="Item 2">
+              <ul>
+                <li nz-menu-item>Option 3</li>
+                <li nz-menu-item>Option 4</li>
+              </ul>
+            </li>
+          </ul> 
+        </li> -->
+        <!-- <li nz-submenu nzTitle="Vật Tư" nzIcon="gift">  
+        </li> -->
+        <li nz-menu-item [nzMatchRouter]="true">
+          <a [routerLink]="['/danh-muc/khach-hang/danh-sach']">
+            <i nz-icon nzType="star" nzTheme="outline"></i><span>Khách Hàng</span>
+          </a>
+        </li>
+        <li nz-menu-item [nzMatchRouter]="true">
+          <a [routerLink]="['/danh-muc/don-vi-tinh/danh-sach']">
+            <i nz-icon nzType="highlight" nzTheme="outline"></i><span>Đơn vị tính</span>
+          </a>
+        </li>
+        <li nz-menu-item [nzMatchRouter]="true">
+          <a [routerLink]="['/danh-muc/vat-tu/danh-sach']">
+            <i nz-icon nzType="gift" nzTheme="outline"></i><span>Vật tư</span>
+          </a>
+        </li>
+        <li nz-menu-item [nzMatchRouter]="true">
+          <a [routerLink]="['/danh-muc/kho/danh-sach']">
+            <i nz-icon nzType="appstore" nzTheme="outline"></i><span>Kho</span>
+          </a>
+        </li>
+        <li nz-menu-item [nzMatchRouter]="true">
+          <a [routerLink]="['/danh-muc/phieu-xuat/danh-sach']">
+            <i nz-icon nzType="fast-forward" nzTheme="outline"></i><span>Phiếu Xuất</span>
+          </a>
+        </li>
+        <li nz-menu-item [nzMatchRouter]="true">
+          <a [routerLink]="['/danh-muc/phieu-nhap/danh-sach']">
+            <i nz-icon nzType="fast-backward" nzTheme="outline"></i><span>Phiếu Nhập</span>
+          </a>
+        </li>
+        <!-- <li nz-menu-item>
+          <i nz-icon nzType="fast-backward" nzTheme="outline"></i><span>Phiếu Nhập</span>
+        </li> -->
+        <li nz-menu-item [nzMatchRouter]="true">
+          <a [routerLink]="['/danh-muc/nhan-vien/danh-sach']">
+            <i nz-icon nzType="customer-service" nzTheme="outline"></i><span>Nhân Viên</span>
+          </a>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="hdd" nzTheme="outline"></i><span>Chi Tiết Vật Tư</span>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="check-circle" nzTheme="outline"></i><span>Chất Lượng</span>
+        </li>
+
+        <!-- <li nz-menu-item>
+          <i nz-icon nzType="customer-service" nzTheme="outline"></i><span>Nhân Viên</span>
+        </li> -->
+        <!-- <li nz-submenu nzTitle="Đơn Vị Tính " nzIcon="highlight">  
+        </li> -->
+
+        <!-- <li nz-submenu nzTitle="Chất Lượng " nzIcon="check-circle">  
+        </li> -->
+        <!-- <li nz-submenu nzTitle="Kho" nzIcon="appstore">  
+        </li> -->
+
+        <!-- <li nz-submenu nzTitle="Phiếu Nhập" nzIcon="fast-backward"> -->
+        <!-- <ul>
+            <li nz-menu-item>Option 9</li>
+            <li nz-menu-item>Option 10</li>
+            <li nz-menu-item>Option 11</li>
+          </ul> -->
+        <!-- </li>
+        <li nz-submenu nzTitle="Phiếu Xuất" nzIcon="fast-forward">
+        </li> -->
+        <!-- <li nz-submenu nzTitle="Khách Hàng" nzIcon="star">
+        </li> -->
+
+        <!-- <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li> -->
+        <!-- <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li>
+        <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li>
+        <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li>
+        <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li>
+        <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li>
+        <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li>
+        <li nz-submenu nzTitle="Nhân Viên" nzIcon="customer-service">
+        </li> -->
+
+      </ul>
+    </nz-sider>
+    <nz-layout class="inner-layout">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Trang Chủ </nz-breadcrumb-item>
+        <nz-breadcrumb-item>Danh Sách </nz-breadcrumb-item>
+        <nz-breadcrumb-item>Ứng Dụng</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <nz-content>
+        <div>
+
+          <!-- <input nzSize="10px" style="margin-left: 500px;margin-top: 0px;height: 31px;" />  
+          <button  style="margin-left: 720px;margin: auto;height: 28px; " nz-button nzType="primary">
+            
+            <i nz-icon nzType="search"></i>Tìm Kiếm</button>
+             <nz-input-group style="float: left; "  nzCompact>
+              <input type="text" nz-input [ngModel]="'Huy Lê'" style="width: 14%;height: 32px; margin-top: -32px;  margin-left: 158px; " />
+            </nz-input-group>
+            <nz-date-picker style="margin-left: -461px; width: auto;" ></nz-date-picker> -->
+          <div>
+            <router-outlet></router-outlet>
+          </div>
+          <!-- <div class="PhanTrang"> 
+          <nz-pagination [nzPageIndex]="5" [nzTotal]="50"></nz-pagination>
+        </div>   -->
+        </div>
+        <!-- <div class="Rain">
+        <img src="test.png" width="193px" height="193px"  />
+        </div> -->
+
+      </nz-content>
+      <div class="footer">
+        <nz-breadcrumb style="margin-left: 505px;">
+          <span nz-text><strong>Được Tạo Bởi Huy Lê</strong></span>
+        </nz-breadcrumb>
+      </div>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

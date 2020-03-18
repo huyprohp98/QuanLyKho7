@@ -1,0 +1,62 @@
+// nz-header,
+// nz-footer {
+//   background: #7dbcea;
+//   color: #fff;
+// }
+
+// [nz-menu] {
+//     width: 200px;
+//     height: 700px;
+//   }
+
+
+.logo {
+       width: 106px;
+       height: 65px;
+     background: #1890ff;
+     margin: -1px 30px 16px 0px;
+     float: left;
+     background-image: url(https://ephoto360.com/uploads/worigin/2018/08/16/logo-avat-min5b7543dc69433_a9f52c64b2b2a23e486cac1574a88eb6.jpg);
+     background-size: contain;
+     background-position: center center;
+     background-repeat: no-repeat;
+  
+   }
+   .Rain{
+   margin-left: 300px;
+   }
+   .header-menu {
+    line-height: 64px;
+     background: #1890ff;
+    
+   }
+  
+   .sider-menu {
+     height: 100%;
+     border-right: 0;
+    
+   
+   }
+  
+   .inner-layout {
+     padding: 0 24px 24px;
+   }
+  
+   .PhanTrang
+     {
+       margin-top: 580px;
+       margin-left: 400px;
+      
+     }
+  
+   nz-breadcrumb {
+     margin: 16px 0;
+   }
+  
+   nz-content {
+     background: #fff;
+     padding: 24px;
+     min-height: 280px;
+   }
+  
+  
